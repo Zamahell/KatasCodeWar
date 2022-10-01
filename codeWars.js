@@ -106,12 +106,13 @@ function narcissistic(value) {
 let resultado5 = narcissistic(153)
 console.log(resultado5)
 
+// 6
 // An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
 // Example: (Input --> Output)
 // "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
 
 // NOTA: EL "ISOGRAM" si esta vacio es true, es la primera confirmacion que buscamos con un if
-// el parametro lo dejamos todo en minuscula en la linea 119
+// el parametro lo dejamos todo en minuscula en la linea 123
 // creamos 2 variables, arr y arrSort, la primera contendra la separacion con el metodo split separado por comillas simpels
 // y el arrSort, crera un nuevo array y estara ordenado con el metodo sort
 // Creamos bucle for "si el contador es menor que el largo de caracteres de arrSort, se suma 1 -- IF si es que en el arrSort posicion contador mas 1
@@ -135,9 +136,34 @@ function isIsogram(str){
 
         }
         
-        
-
-
-
 let resultado6 = isIsogram("")
 console.log(resultado6)
+
+
+// 7
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers.
+//  The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. 
+//  Write a method that takes the array as an argument and returns this "outlier" N.
+
+function findOutlier(integers){
+  let parArr = [];
+  let imparArr = [];
+    
+  for(let i = 0; i < integers.length; i++){
+    if (integers[i]%2 === 0){
+        parArr.push(integers[i])
+    }else{
+        imparArr.push(integers[i])
+    }
+
+  }
+
+  if (parArr.length == 1){
+    return parArr[0];
+  }else{
+    return imparArr[0]
+  }
+}
+
+let resultado7 = findOutlier(2, 4, 0, 100, 4, 11, 2602, 36)
+console.log(resultado7)
