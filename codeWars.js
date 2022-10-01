@@ -67,3 +67,77 @@ function getSum(a ,b){
 let resultado4 = getSum(2,6);
 console.log(resultado4);
 
+// 5
+// A Narcissistic Number is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
+// For example, take 153 (3 digits), which is narcisstic:
+//     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+// and 1652 (4 digits), which isn't:
+//     1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+
+// The Challenge:
+// Your code must return true or false (not 'true' and 'false') depending upon whether the given number is a Narcissistic number in base 10. This may be True and False in your language, e.g. PHP.
+// Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function.
+// Nota: para sacar el exponente, pasamos el value a toString para ejecutar el metodo length con eso, podemos identificar la cantidad de numeros 
+// al value tenemosq que separarlos con toString y split 123 => "1", "2", "3"
+// Declarar las variables para un bucle for
+// "si [i] es menor que la cantidad de numeros (realizados con split y contados con length), toma ese numero y elevalo por el exponente definido y se
+// suma en la variable 'SUMA'"
+function narcissistic(value) {
+    const exponente = value.toString().length
+    const numero = value.toString().split('')
+    
+    let expo = 0;
+    let suma = 0;
+    for(let i = 0; i < numero.length; i++){
+        expo = Number(numero[i]**exponente)
+        suma += expo;
+        
+    }
+    
+    if(suma == value){
+        return true
+    }else{
+        return false
+    }
+
+  }
+  
+let resultado5 = narcissistic(153)
+console.log(resultado5)
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+// Example: (Input --> Output)
+// "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+
+// NOTA: EL "ISOGRAM" si esta vacio es true, es la primera confirmacion que buscamos con un if
+// el parametro lo dejamos todo en minuscula en la linea 119
+// creamos 2 variables, arr y arrSort, la primera contendra la separacion con el metodo split separado por comillas simpels
+// y el arrSort, crera un nuevo array y estara ordenado con el metodo sort
+// Creamos bucle for "si el contador es menor que el largo de caracteres de arrSort, se suma 1 -- IF si es que en el arrSort posicion contador mas 1
+// y se compara con arrSort para verificar si este no es igual al reccorrido que se genera, si son iguales devuelve false", ya si no presenta una igualdad devuelve true
+function isIsogram(str){
+    if(str.isEmpty){
+        return true;
+    }else{
+        str = str.toLowerCase()
+    }
+        let arr = str.split('');
+        let arrSort = arr.slice().sort()
+
+        for(let i = 0; i < arrSort.length; i++){
+            if(arrSort[i + 1] == arrSort[i]){
+                return false
+            }
+
+        }
+            return true;
+
+        }
+        
+        
+
+
+
+let resultado6 = isIsogram("")
+console.log(resultado6)
