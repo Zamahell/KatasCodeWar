@@ -39,3 +39,31 @@ function addBinary(a,b) {
 
 let resultado3 = addBinary(9, 1);
 console.log(resultado3)
+
+
+// 4
+// Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+// Note: a and b are not ordered!
+// Examples (a, b) --> output (explanation)
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+// Nota: Definir como constantes el minimo y el maximo con un operador condicional (en este ejemplo se uso un ternario), de
+// Definir una variable suma y crear un ciclo for con el minimo, en donde si este minimo aun no es igual al maximo se sumara uno
+// y se sumara a la variable suma.
+function getSum(a ,b){
+    const min = a < b ? a : b;
+    const max = a < b ? b : a;
+
+    let sum = 0;
+    for(let i = min; i<= max; i++){
+        sum += i;
+    }
+    return sum;
+}
+let resultado4 = getSum(2,6);
+console.log(resultado4);
+
