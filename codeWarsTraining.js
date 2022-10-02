@@ -168,12 +168,8 @@ console.log(resultadoVocales)
 // XO("ooxXm") => true
 // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 // XO("zzoo") => false
+
 function XO(str) {
-  let x = str.match(/x/)
-  let o = str.match(/o/)
-  return x == o;
+  let arr = str.toLowerCase().split('');
+  return arr.filter(element => element == 'x').length == arr.filter(element => element == 'o').length;
 }
-
-let resultadoXO = XO("ooxxx")
-console.log(resultadoXO)
-
