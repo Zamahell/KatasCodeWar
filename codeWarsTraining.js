@@ -113,3 +113,67 @@ function repeatStr (n, s) {
 
 let resultadoRepeatStr = repeatStr(2, "sexo");
 console.log(resultadoRepeatStr)
+
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+function oddCount(n){
+ return Math.floor(n/2);
+}
+
+let resultadoOddCount = oddCount(10);
+console.log(resultadoOddCount)
+
+
+
+// Trolls are attacking your comment section!
+// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+// Your task is to write a function that takes a string and return a new string with all vowels removed.
+// For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+// Note: for this kata y isn't considered a vowel.
+
+function disemvowel(str) {
+  return str.replace(/[aáAÁeéEÉiíIÍoOóÓuúÚ]/gi, '')
+}
+
+let resultadoDisemvowel = disemvowel("This website is for losers LOL!")
+console.log(resultadoDisemvowel)
+
+
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+function getCount(str) {
+  const vocales = "aáeéiíoóuú";
+  let cuentaVocales = 0
+
+  for(const letra of str){
+    if(vocales.includes(letra.toLowerCase())){
+      cuentaVocales++
+    }
+  }
+  return cuentaVocales;
+}
+
+let resultadoVocales = getCount("Hola mundo animal")
+console.log(resultadoVocales)
+
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+function XO(str) {
+  let x = str.match(/x/)
+  let o = str.match(/o/)
+  return x == o;
+}
+
+let resultadoXO = XO("ooxxx")
+console.log(resultadoXO)
+
